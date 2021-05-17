@@ -8,26 +8,25 @@ const WAGE_PER_HOUR =20;
 let empWage = 0;
 let empHrs = 0;
 
-//UC2
-//To check the emp wage accounding to the part time and full time work
-    empCheck = Math.floor(Math.random()*10)%3;
+//UC 3
+//Refactor the code to write function for daily working hours
+function getWorkingHours(empCheck){
     switch(empCheck){
         case IS_PART_TIME:
-            console.log("Employee is PRESENT for half day")
-            empHrs=PART_TIME_HOURS;
-            break;
+            return PART_TIME_HOURS;
+
         case IS_FULL_TIME:
-            console.log("Employee is PRESENT for full day")
-            empHrs=FULL_TIME_HOURS;
-            break;
+            return FULL_TIME_HOURS;
+            
         default:
-            console.log("Employee is ABSENT")
-            empHrs=0;        
-            break;
+            return 0;
     }
+}
 // Expression for employee wage for a single day
+empCheck = Math.floor(Math.random()*10)%3;
+empHrs = getWorkingHours(empCheck);
 empWage = empHrs * WAGE_PER_HOUR;
-console.log("Wage for the day is: "+empWage)
+console.log("Wage for the day is: "+empWage);
 
 
     
